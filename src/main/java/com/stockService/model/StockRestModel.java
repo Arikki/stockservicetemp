@@ -11,6 +11,5 @@ public class StockRestModel {
 
 	private String companyCode;
 	private BigDecimal stockPrice;
-	private Long numberOfHours;
 
 }

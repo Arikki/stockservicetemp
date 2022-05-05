@@ -23,7 +23,7 @@ public class StockAggregate {
 	private String uuid;
 	private String companyCode;
 	private BigDecimal stockPrice;
-	private Long numberOfHours;
+	
 
 	public StockAggregate() {
 
@@ -34,7 +34,7 @@ public class StockAggregate {
 		// perform validations here
 		StockCreatedEvent stockCreatedEvent = StockCreatedEvent.builder().uuid(createStockCommand.getUuid())
 				.companyCode(createStockCommand.getCompanyCode()).stockPrice(createStockCommand.getStockPrice())
-				.numberOfHours(createStockCommand.getNumberOfHours()).build();
+				.build();
 
 		AggregateLifecycle.apply(stockCreatedEvent);
 	}
@@ -54,7 +54,7 @@ public class StockAggregate {
 		this.companyCode = stockCreatedEvent.getCompanyCode();
 		this.stockPrice = stockCreatedEvent.getStockPrice();
 		this.uuid = stockCreatedEvent.getUuid();
-		this.numberOfHours = stockCreatedEvent.getNumberOfHours();
+		
 
 	}
 

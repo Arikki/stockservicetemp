@@ -16,7 +16,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		System.out.println("Http:" + http.toString());
+
 		http.csrf().disable().authorizeRequests().antMatchers("/api/v1.0/market/stock/add").authenticated() // Block
 																													// this
 				.antMatchers("/**").permitAll() // Allow this for all

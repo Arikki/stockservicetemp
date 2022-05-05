@@ -2,6 +2,8 @@ package com.stockService.query.api.queries;
 
 import java.util.Date;
 
+import org.springframework.data.domain.Pageable;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +14,8 @@ import lombok.RequiredArgsConstructor;
 public class GetStocksQuery {
 
 	private String companyCode;
-	private Date startDate;
-	private Date endDate;
+	private String startDate;
+	private String endDate;
+	private int pageNo;
+	private int size;
 }

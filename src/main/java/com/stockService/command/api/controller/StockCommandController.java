@@ -41,7 +41,7 @@ public class StockCommandController {
 
 		CreateStockCommand createStockCommand = CreateStockCommand.builder().uuid(UUID.randomUUID().toString())
 				.companyCode(stockRestModel.getCompanyCode()).stockPrice(stockRestModel.getStockPrice())
-				.numberOfHours(stockRestModel.getNumberOfHours()).build();
+				.build();
 
 		logger.info("Created command to add a stock with company code:" + stockRestModel.getCompanyCode());
 		String result = commandGateway.sendAndWait(createStockCommand);

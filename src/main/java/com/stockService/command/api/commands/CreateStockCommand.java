@@ -20,6 +20,5 @@ public class CreateStockCommand {
 	private String uuid;
 	private String companyCode;
 	private BigDecimal stockPrice;
-	private Long numberOfHours;
 
 }

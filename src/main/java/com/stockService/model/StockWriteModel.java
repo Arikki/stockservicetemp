@@ -1,9 +1,7 @@
-package com.stockService.data;
+package com.stockService.model;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,27 +9,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Data
-@Entity
+
 @Builder
 @AllArgsConstructor
 @RequiredArgsConstructor
-@Table(name = "stock")
-public class Stock {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+public class StockWriteModel {
+
 	private int id;
 	private String companyCode;
-	private LocalDate date;
-	private LocalTime time;
+	private LocalDateTime startDateTime;
+	private LocalDateTime endDateTime;
 	private BigDecimal stockPrice;
-
 }
