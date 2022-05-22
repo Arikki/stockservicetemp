@@ -1,0 +1,10 @@
+version: 1.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:us-east-1:109282132081:task-definition/stock-service-task:1"
+        LoadBalancerInfo:
+          ContainerName: "stock-service-container"
+          ContainerPort: "8082"
+        PlatformVersion: "LATEST"
