@@ -4,7 +4,8 @@ phases:
     commands:
     - echo Logging in to Amazon ECR...
     - aws --version
-    - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+    - $(aws ecr get-login-password --region us-east-1)
+    - docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) $REPOSITORY_URI
     - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
     - IMAGE_URI=${REPOSITORY_URI}:${TAG}
   build:
