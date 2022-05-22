@@ -49,7 +49,7 @@ public class StockQueryController {
 
 	@GetMapping("get/{companyCode}/{startDate}/{endDate}")
 	@Operation(summary = "Gets stock on date range for a company")
-	@CrossOrigin("http://localhost:4200")
+	@CrossOrigin("http://localhost:8080")
 	public List<StockReadModel> getStockBasedOnDates(@PathVariable String companyCode, @PathVariable String startDate,
 			@PathVariable String endDate) throws ParseException {
 		GetStocksQuery getStocksQuery = new GetStocksQuery();
